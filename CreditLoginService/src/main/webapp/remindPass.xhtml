@@ -1,0 +1,82 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<h:html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Creditworthiness service</title>
+	<link href="styles.css" rel="stylesheet" type="text/css" />
+	<link
+		href="https://fonts.googleapis.com/css?family=Lato:400,900&amp;subset=latin-ext"
+		rel="stylesheet" />
+
+	<link href="css/fontello.css" rel="stylesheet" type="text/css" />
+</h:head>
+<h:body>
+	<div id="container">
+		<h:form>
+			<div id="manu">
+				<div class="option">
+					<h:commandLink class="commandLink"
+						action="/login.xhtml?faces-redirect=true">Home</h:commandLink>
+				</div>
+				<div class="option">
+					<h:commandLink class="commandLink"
+						action="about.xhtml?faces-redirect=true">About the project</h:commandLink>
+				</div>
+				<div class="option">
+					<a class="commandLink"
+						href="https://github.com/MichalSiwiak/CreditLoginService" target="_blank">GitHub
+						source<i class="icon-github"></i>
+					</a>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+		</h:form>
+		<div id="topbar">
+			<div id="topbarR">
+				<span class="bigtitle">Creditworthiness service</span>
+				<div style="height: 15px;"></div>
+				The application is used to assess creditworthiness. You can test the
+				application and log on as a test user using login: test and
+				password: test or create your own account in the service.
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+		<div id="content">
+			<h:form>
+				<p:messages id="messages" autoUpdate="true" closable="true" />
+				<p:panel id="panel"
+					style="width:400px;height:200px;margin-left: auto;margin-right: auto;margin-top: 80px;text-align: center;"
+					header="Password reminder">
+					<br />
+					<h:panelGrid columns="2" class="grid">
+						<p:outputLabel for="eMail" value="Enter e-mail:" />
+						<p:inputText id="eMail" value="#{logger.eMail}" required="true"
+							label="eMail" validatorMessage="Invalid email format"
+							styleClass="input">
+							<f:validateRegex
+								pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+							<f:validateLength minimum="2" />
+						</p:inputText>
+						<br />
+						<br />
+					</h:panelGrid>
+					<h:panelGrid columns="1" class="grid2">
+						<p:commandButton value="Send password" update="panel"
+							action="#{logger.remindPassword}" styleClass="login" />
+						<p:commandButton value="Back"
+							action="login.xhtml?faces-redirect=true" immediate="true"
+							styleClass="create" />
+					</h:panelGrid>
+				</p:panel>
+			</h:form>
+		</div>
+		<div id="footer">&copy; Michał Siwiak. All rights reserved</div>
+	</div>
+</h:body>
+</h:html>
