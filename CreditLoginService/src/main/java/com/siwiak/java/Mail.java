@@ -11,10 +11,10 @@ import javax.mail.internet.MimeMessage;
 
 public class Mail {
 
-	private final String username = "***";
-	private final String password = "***";
+	private final String username = "*****";
+	private final String password = "*****";
 
-	private final String messageSender = "***";
+	private final String messageSender = "*****";
 	private String messageRecipient;
 	private String messageSubject;
 	private String messageContent;

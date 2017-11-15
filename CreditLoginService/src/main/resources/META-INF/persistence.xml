@@ -6,9 +6,9 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-			<property name="javax.persistence.jdbc.user" value="*****" />
-			<property name="javax.persistence.jdbc.password" value="*****" />
-			<property name="javax.persistence.jdbc.url" value="*****" />
+			<property name="javax.persistence.jdbc.user" value="******" />
+			<property name="javax.persistence.jdbc.password" value="******" />
+			<property name="javax.persistence.jdbc.url" value="******" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
 			<!-- <property name="hibernate.hbm2ddl.auto" value="create"/>-->
 
